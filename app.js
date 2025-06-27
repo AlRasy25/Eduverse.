@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- DATABASE PENGGUNA DUMMY ---
     const dummyUsers = [
         { username: 'rasyid', password: 'password123', fullName: 'Rasyid', role: 'Siswa' },
-        { username: 'mingyu', password: 'password123', fullName: 'Mingyu', role: 'Siswa' },
+        { username: 'mingyu', password: 'password123', fullName: 'Mingyu', role: 'Punya Naya' },
         { username: 'jaemin', password: 'password123', fullName: 'Jaemin', role: 'Mahasiswa' },
         { username: 'bosbena', password: 'password123', fullName: 'Bos Bena', role: 'Umum' },
         { username: 'dinda', password: 'password123', fullName: 'Dinda', role: 'Guru' },
