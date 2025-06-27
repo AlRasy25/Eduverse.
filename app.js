@@ -1,18 +1,20 @@
 // app.js
 
 document.addEventListener('DOMContentLoaded', () => {
-    // --- DATABASE PENGGUNA DUMMY ---
+    // ========================================================
+    // BAGIAN 1: SISTEM LOGIN & AUTENTIKASI (YANG SUDAH ADA)
+    // ========================================================
+    
     const dummyUsers = [
         { username: 'rasyid', password: 'password123', fullName: 'Rasyid', role: 'Siswa' },
-        { username: 'mingyu', password: 'password123', fullName: 'Mingyu', role: 'Punya Naya' },
+        { username: 'mingyu', password: 'password123', fullName: 'Mingyu', role: 'punya naya' },
         { username: 'jaemin', password: 'password123', fullName: 'Jaemin', role: 'Mahasiswa' },
-        { username: 'bosbena', password: 'password123', fullName: 'Bos Bena', role: 'Umum' },
+        { username: 'bosbena', password: 'password123', fullName: 'Bos Bena', role: 'Direktur' },
         { username: 'dinda', password: 'password123', fullName: 'Dinda', role: 'Guru' },
         { username: 'nafla', password: 'password123', fullName: 'Nafla', role: 'Siswa' },
         { username: 'khaerudin', password: 'password123', fullName: 'Dr. Khaerudin', role: 'Dosen' }
     ];
 
-    // --- PENGAMBILAN ELEMEN DOM ---
     const authArea = document.getElementById('authArea');
     const loginModal = document.getElementById('loginModal');
     const profileModal = document.getElementById('profileModal');
@@ -23,9 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const profileDetails = document.getElementById('profileDetails');
     const loginError = document.getElementById('loginError');
 
-    // --- FUNGSI UNTUK MERENDER TAMPILAN ---
-
-    // Tampilkan tombol Login jika tidak ada session
     const renderLoginButton = () => {
         if (!authArea) return;
         authArea.innerHTML = `
@@ -38,7 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    // Tampilkan info profil jika ada session
     const renderUserProfile = (user) => {
         if (!authArea) return;
         const initial = user.fullName.charAt(0).toUpperCase();
@@ -64,9 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    // --- LOGIKA UTAMA ---
-
-    // Cek status login saat halaman dimuat
     const checkLoginStatus = () => {
         const currentUser = localStorage.getItem('eduverseUser');
         if (currentUser) {
@@ -74,9 +69,10 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             renderLoginButton();
         }
+        // Panggil fungsi update status registrasi setelah cek login
+        updateAllRegistrationButtons();
     };
 
-    // Event listener hanya ditambahkan jika elemennya ada
     if (loginForm) {
         loginForm.addEventListener('submit', (e) => {
             e.preventDefault();
@@ -105,14 +101,74 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    if (closeLoginModal) {
-        closeLoginModal.addEventListener('click', () => loginModal.classList.add('hidden'));
-    }
+    if (closeLoginModal) closeLoginModal.addEventListener('click', () => loginModal.classList.add('hidden'));
+    if (closeProfileModal) closeProfileModal.addEventListener('click', () => profileModal.classList.add('hidden'));
+
+    // ========================================================
+    // BAGIAN 2: LOGIKA BARU UNTUK REGISTRASI PROGRAM
+    // ========================================================
     
-    if (closeProfileModal) {
-        closeProfileModal.addEventListener('click', () => profileModal.classList.add('hidden'));
+    const programContainer = document.getElementById('accordion-container');
+
+    // Fungsi untuk mengubah tampilan tombol menjadi "Terdaftar"
+    const setButtonToRegistered = (button) => {
+        button.disabled = true;
+        button.innerHTML = `<i class="fas fa-check-circle mr-2"></i>Anda Sudah Terdaftar`;
+    };
+    
+    // Fungsi untuk memeriksa dan memperbarui status semua tombol daftar di halaman
+    const updateAllRegistrationButtons = () => {
+        const currentUser = JSON.parse(localStorage.getItem('eduverseUser'));
+        if (!currentUser || !programContainer) return; // Keluar jika tidak login atau bukan di halaman program
+
+        const registrations = JSON.parse(localStorage.getItem('programRegistrations')) || {};
+        const userRegistrations = registrations[currentUser.username] || [];
+
+        const registerButtons = document.querySelectorAll('.register-btn');
+        registerButtons.forEach(button => {
+            const programName = button.dataset.program;
+            if (userRegistrations.includes(programName)) {
+                setButtonToRegistered(button);
+            }
+        });
+    };
+    
+    // Event listener utama pada container program
+    if (programContainer) {
+        programContainer.addEventListener('click', (e) => {
+            // Cek apakah yang diklik adalah tombol daftar
+            if (e.target && e.target.classList.contains('register-btn')) {
+                const button = e.target;
+                const programName = button.dataset.program;
+                const currentUser = JSON.parse(localStorage.getItem('eduverseUser'));
+
+                // Jika belum login, tampilkan modal login
+                if (!currentUser) {
+                    if (loginModal) loginModal.classList.remove('hidden');
+                    return;
+                }
+
+                // Jika sudah login, proses pendaftaran
+                const registrations = JSON.parse(localStorage.getItem('programRegistrations')) || {};
+                
+                // Siapkan array pendaftaran untuk user ini jika belum ada
+                if (!registrations[currentUser.username]) {
+                    registrations[currentUser.username] = [];
+                }
+                
+                // Tambahkan program ke daftar & simpan
+                if (!registrations[currentUser.username].includes(programName)) {
+                    registrations[currentUser.username].push(programName);
+                    localStorage.setItem('programRegistrations', JSON.stringify(registrations));
+                    
+                    // Beri konfirmasi dan ubah tombol
+                    alert(`Selamat, ${currentUser.fullName}! Anda berhasil mendaftar untuk program ${programName}.`);
+                    setButtonToRegistered(button);
+                }
+            }
+        });
     }
 
     // --- INISIALISASI ---
-    checkLoginStatus();
+    checkLoginStatus(); // Ini akan menjalankan semua pengecekan saat halaman dimuat
 });
