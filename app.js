@@ -7,9 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const dummyUsers = [
         { username: 'rasyid', password: 'password123', fullName: 'Rasyid', role: 'Siswa' },
-        { username: 'mingyu', password: 'password123', fullName: 'Mingyu', role: 'punya naya' },
+        { username: 'mingyu', password: 'password123', fullName: 'Mingyu', role: 'Siswa' },
         { username: 'jaemin', password: 'password123', fullName: 'Jaemin', role: 'Mahasiswa' },
-        { username: 'bosbena', password: 'password123', fullName: 'Bos Bena', role: 'Direktur' },
+        { username: 'bosbena', password: 'password123', fullName: 'Bos Bena', role: 'Umum' },
         { username: 'dinda', password: 'password123', fullName: 'Dinda', role: 'Guru' },
         { username: 'nafla', password: 'password123', fullName: 'Nafla', role: 'Siswa' },
         { username: 'khaerudin', password: 'password123', fullName: 'Dr. Khaerudin', role: 'Dosen' }
