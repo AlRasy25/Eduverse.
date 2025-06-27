@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Program Kami - EduVerse Learning Center</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { font-family: 'Poppins', sans-serif; }
+        .gradient-text { background: linear-gradient(45deg, #1e40af, #3b82f6); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .nav-link-active { color: #3b82f6; font-weight: 600; border-bottom: 2px solid #3b82f6; }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+        }
+        .accordion-button.active + .accordion-content {
+            max-height: 500px;
+            padding-top: 1rem;
+            padding-bottom: 1.5rem;
+        }
+        .accordion-button.active .accordion-icon {
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-3">
+                 <div class="w-10 h-10">
+                    <svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#1e40af;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <path fill="url(#grad1)" d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Z"/>
+                        <path fill="url(#grad1)" d="M168,88H152a40,40,0,0,0-80,0H56a8,8,0,0,0,0,16H72a40,40,0,0,0,80,0h16a8,8,0,0,0,0-16Zm-68,0a24,24,0,0,1,48,0Z"/>
+                        <path fill="white" d="M128,72a16,16,0,1,0,16,16A16,16,0,0,0,128,72Z"/>
+                        <circle cx="184" cy="152" r="12" fill="#3b82f6"/>
+                        <path fill="#1e40af" d="M92,128a16,16,0,1,0,16,16A16,16,0,0,0,92,128Z"/>
+                    </svg>
+                </div>
+                <h1 class="text-2xl font-bold text-blue-700">EduVerse</h1>
+            </a>
+            <nav class="hidden md:flex items-center space-x-6">
+                <a href="index.html" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition duration-300">Home</a>
+                <a href="tentang.html" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition duration-300">Tentang</a>
+                <a href="program.html" class="text-sm font-medium transition duration-300 nav-link-active">Program</a>
+                <a href="fasilitas.html" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition duration-300">Fasilitas</a>
+                <a href="kontak.html" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition duration-300">Kontak</a>
+            </nav>
+            <div id="authArea"></div>
+        </div>
+    </header>
+
+    <main class="py-16 px-4">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-bold gradient-text mb-3">Program Unggulan EduVerse</h1>
+                <p class="text-lg text-gray-600">Dirancang untuk memperkuat fungsi PSB sebagai ruang yang dinamis, inklusif, dan mendorong kolaborasi.</p>
+            </div>
+
+            <div class="space-y-4" id="accordion-container">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <button class="accordion-button w-full text-left p-6 flex justify-between items-center transition duration-300 hover:bg-gray-100">
+                        <span class="text-xl font-bold text-gray-800">GOSSIP: Gathering of Students and Speakers Inspiring Progress</span>
+                        <span class="accordion-icon text-blue-500 text-2xl transition-transform duration-300 transform"><i class="fas fa-plus"></i></span>
+                    </button>
+                    <div class="accordion-content px-6">
+                        <p class="text-gray-600 mb-4">Sebuah program kreatif dalam format talk show sebagai ruang interaksi santai dan terbuka antar siswa, guru, dan mahasiswa untuk membahas isu-isu pendidikan. Diadakan secara berkala dan disiarkan melalui kanal digital untuk menjangkau audiens nasional.</p>
+                        <h4 class="font-semibold text-gray-700 mb-2">Manfaat Program:</h4>
+                        <ul class="text-sm text-gray-600 list-disc list-inside space-y-1">
+                            <li>Membangun <i>student voice</i> dalam sistem pendidikan. </li>
+                            <li>Menjadi sarana berbagi praktik baik dan pengalaman belajar. </li>
+                            <li>Mengasah kemampuan komunikasi dan berpikir kritis peserta didik. </li>
+                            <li>Menumbuhkan minat generasi muda terhadap isu-isu aktual pendidikan. </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <button class="accordion-button w-full text-left p-6 flex justify-between items-center transition duration-300 hover:bg-gray-100">
+                        <span class="text-xl font-bold text-gray-800">ShowUp!: Showcase of Unlimited Projects</span>
+                        <span class="accordion-icon text-blue-500 text-2xl transition-transform duration-300 transform"><i class="fas fa-plus"></i></span>
+                    </button>
+                    <div class="accordion-content px-6">
+                        <p class="text-gray-600 mb-4">Program kreatif berskala nasional untuk mengapresiasi dan mempublikasikan hasil karya peserta didik dan pendidik dari berbagai jenjang. Diselenggarakan setiap tahun dengan format pameran hibrida (fisik dan digital). </p>
+                        <h4 class="font-semibold text-gray-700 mb-2">Manfaat Program:</h4>
+                        <ul class="text-sm text-gray-600 list-disc list-inside space-y-1">
+                            <li>Menjadi ajang apresiasi karya kreatif dari berbagai daerah. </li>
+                            <li>Memperkuat semangat pembelajaran berbasis proyek yang autentik. </li>
+                            <li>Menjadi ekosistem portofolio pendidikan Indonesia yang terbuka. </li>
+                            <li>Meningkatkan literasi digital dan kemampuan publikasi peserta didik. </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <button class="accordion-button w-full text-left p-6 flex justify-between items-center transition duration-300 hover:bg-gray-100">
+                        <span class="text-xl font-bold text-gray-800">TEMU: Temukan dan Ukur</span>
+                        <span class="accordion-icon text-blue-500 text-2xl transition-transform duration-300 transform"><i class="fas fa-plus"></i></span>
+                    </button>
+                    <div class="accordion-content px-6">
+                        <p class="text-gray-600 mb-4">Program berbasis sistem dashboard digital yang dirancang untuk membantu peserta didik, guru, dan orang tua menavigasi proses belajar secara personal dan reflektif. Motto kami: "Karena belajar bukan tentang siapa yang paling cepat, tapi siapa yang paling sadar. Maka, yuk: kita TEMUkan progres kita, ya." </p>
+                        <h4 class="font-semibold text-gray-700 mb-2">Manfaat Program:</h4>
+                        <ul class="text-sm text-gray-600 list-disc list-inside space-y-1">
+                            <li>Membantu peserta didik merencanakan perjalanan belajarnya secara personal. </li>
+                            <li>Memberikan akses yang jelas bagi guru dan orang tua untuk memantau perkembangan. </li>
+                            <li>Mendorong refleksi diri dan kebiasaan evaluasi mandiri. </li>
+                            <li>Mengubah evaluasi menjadi proses yang menyenangkan, visual, dan bermakna. </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <div id="loginModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden p-4">
+        <div class="bg-white p-8 rounded-xl shadow-2xl w-full max-w-sm transform transition-all duration-300 ease-out">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold text-gray-800">Login</h2>
+                <button id="closeLoginModal" class="text-gray-400 hover:text-gray-800 text-3xl font-light">&times;</button>
+            </div>
+            <form id="loginForm">
+                <div class="mb-4">
+                    <label for="username" class="block text-sm font-medium text-gray-700 mb-1">Username</label>
+                    <input type="text" id="username" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="contoh: rasyid" required>
+                </div>
+                <div class="mb-4">
+                    <label for="password" class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                    <input type="password" id="password" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="password: password123" required>
+                </div>
+                <p id="loginError" class="text-red-500 text-sm mb-4 h-5"></p>
+                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300">
+                    Login
+                </button>
+            </form>
+        </div>
+    </div>
+    <div id="profileModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden p-4">
+         <div class="bg-white p-8 rounded-xl shadow-2xl w-full max-w-sm transform transition-all duration-300 ease-out text-center">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold text-gray-800">Profil Pengguna</h2>
+                <button id="closeProfileModal" class="text-gray-400 hover:text-gray-800 text-3xl font-light">&times;</button>
+            </div>
+            <div id="profileDetails"></div>
+            <button id="logoutButton" class="w-full mt-6 bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300">
+                Logout
+            </button>
+        </div>
+    </div>
+
+    <footer id="kontak" class="bg-gray-800 text-white py-12 mt-16"></footer>
+    
+    <script src="app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const accordionButtons = document.querySelectorAll('.accordion-button');
+            accordionButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const isActive = button.classList.contains('active');
+                    accordionButtons.forEach(btn => {
+                        btn.classList.remove('active');
+                        btn.querySelector('.accordion-icon').innerHTML = '<i class="fas fa-plus"></i>';
+                        btn.querySelector('.accordion-icon').classList.remove('rotate-45');
+                    });
+                    if (!isActive) {
+                        button.classList.add('active');
+                        button.querySelector('.accordion-icon').innerHTML = '<i class="fas fa-minus"></i>';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
