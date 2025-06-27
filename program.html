@@ -17,7 +17,7 @@
             transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
         }
         .accordion-button.active + .accordion-content {
-            max-height: 500px;
+            max-height: 500px; /* Adjust as needed */
             padding-top: 1rem;
             padding-bottom: 1.5rem;
         }
@@ -29,22 +29,8 @@
 <body class="bg-gray-50">
     <header class="bg-white shadow-md sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
-            <a href="index.html" class="flex items-center space-x-3">
-                 <div class="w-10 h-10">
-                    <svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
-                                <stop offset="100%" style="stop-color:#1e40af;stop-opacity:1" />
-                            </linearGradient>
-                        </defs>
-                        <path fill="url(#grad1)" d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Z"/>
-                        <path fill="url(#grad1)" d="M168,88H152a40,40,0,0,0-80,0H56a8,8,0,0,0,0,16H72a40,40,0,0,0,80,0h16a8,8,0,0,0,0-16Zm-68,0a24,24,0,0,1,48,0Z"/>
-                        <path fill="white" d="M128,72a16,16,0,1,0,16,16A16,16,0,0,0,128,72Z"/>
-                        <circle cx="184" cy="152" r="12" fill="#3b82f6"/>
-                        <path fill="#1e40af" d="M92,128a16,16,0,1,0,16,16A16,16,0,0,0,92,128Z"/>
-                    </svg>
-                </div>
+            <a href="index.html" class="flex items-center space-x-2">
+                <img src="https://i.postimg.cc/tgvFMJfY/Gemini-Generated-Image-3lcv8x3lcv8x3lcv.png" alt="Logo EduVerse" class="h-12 w-auto">
                 <h1 class="text-2xl font-bold text-blue-700">EduVerse</h1>
             </a>
             <nav class="hidden md:flex items-center space-x-6">
@@ -72,14 +58,18 @@
                         <span class="accordion-icon text-blue-500 text-2xl transition-transform duration-300 transform"><i class="fas fa-plus"></i></span>
                     </button>
                     <div class="accordion-content px-6">
-                        <p class="text-gray-600 mb-4">Sebuah program kreatif dalam format talk show sebagai ruang interaksi santai dan terbuka antar siswa, guru, dan mahasiswa untuk membahas isu-isu pendidikan. Diadakan secara berkala dan disiarkan melalui kanal digital untuk menjangkau audiens nasional.</p>
+                        <p class="text-gray-600 mb-4">Sebuah program kreatif dalam format talk show sebagai ruang interaksi santai dan terbuka antar siswa, guru, dan mahasiswa untuk membahas isu-isu pendidikan. Diadakan secara berkala setiap enam bulan dan disiarkan melalui kanal YouTube EduVerse serta platform digital lainnya.</p>
                         <h4 class="font-semibold text-gray-700 mb-2">Manfaat Program:</h4>
                         <ul class="text-sm text-gray-600 list-disc list-inside space-y-1">
-                            <li>Membangun <i>student voice</i> dalam sistem pendidikan. </li>
-                            <li>Menjadi sarana berbagi praktik baik dan pengalaman belajar. </li>
-                            <li>Mengasah kemampuan komunikasi dan berpikir kritis peserta didik. </li>
-                            <li>Menumbuhkan minat generasi muda terhadap isu-isu aktual pendidikan. </li>
+                            <li>Membangun <i>student voice</i> dalam sistem pendidikan.</li>
+                            <li>Menjadi sarana berbagi praktik baik dan pengalaman belajar.</li>
+                            <li>Mengasah kemampuan komunikasi dan berpikir kritis peserta didik.</li>
                         </ul>
+                        <div class="mt-6">
+                            <button class="register-button bg-green-600 text-white font-semibold py-2 px-5 rounded-lg hover:bg-green-700 transition duration-300" data-program-name="GOSSIP">
+                                <i class="fas fa-check-circle mr-2"></i>Daftar Program Ini
+                            </button>
+                        </div>
                     </div>
                 </div>
 
@@ -89,14 +79,18 @@
                         <span class="accordion-icon text-blue-500 text-2xl transition-transform duration-300 transform"><i class="fas fa-plus"></i></span>
                     </button>
                     <div class="accordion-content px-6">
-                        <p class="text-gray-600 mb-4">Program kreatif berskala nasional untuk mengapresiasi dan mempublikasikan hasil karya peserta didik dan pendidik dari berbagai jenjang. Diselenggarakan setiap tahun dengan format pameran hibrida (fisik dan digital). </p>
-                        <h4 class="font-semibold text-gray-700 mb-2">Manfaat Program:</h4>
+                         <p class="text-gray-600 mb-4">Program kreatif berskala nasional untuk mengapresiasi dan mempublikasikan hasil karya peserta didik dan pendidik dari berbagai jenjang pendidikan. Diselenggarakan setiap tahun dengan format pameran hibrida (fisik dan digital).</p>
+                         <h4 class="font-semibold text-gray-700 mb-2">Manfaat Program:</h4>
                         <ul class="text-sm text-gray-600 list-disc list-inside space-y-1">
-                            <li>Menjadi ajang apresiasi karya kreatif dari berbagai daerah. </li>
-                            <li>Memperkuat semangat pembelajaran berbasis proyek yang autentik. </li>
-                            <li>Menjadi ekosistem portofolio pendidikan Indonesia yang terbuka. </li>
-                            <li>Meningkatkan literasi digital dan kemampuan publikasi peserta didik. </li>
+                            <li>Menjadi ajang apresiasi karya kreatif dari berbagai daerah.</li>
+                            <li>Memperkuat semangat pembelajaran berbasis proyek yang autentik.</li>
+                            <li>Meningkatkan literasi digital dan kemampuan publikasi peserta didik.</li>
                         </ul>
+                        <div class="mt-6">
+                            <button class="register-button bg-green-600 text-white font-semibold py-2 px-5 rounded-lg hover:bg-green-700 transition duration-300" data-program-name="ShowUp!">
+                                <i class="fas fa-check-circle mr-2"></i>Daftar Program Ini
+                            </button>
+                        </div>
                     </div>
                 </div>
                 
@@ -106,72 +100,109 @@
                         <span class="accordion-icon text-blue-500 text-2xl transition-transform duration-300 transform"><i class="fas fa-plus"></i></span>
                     </button>
                     <div class="accordion-content px-6">
-                        <p class="text-gray-600 mb-4">Program berbasis sistem dashboard digital yang dirancang untuk membantu peserta didik, guru, dan orang tua menavigasi proses belajar secara personal dan reflektif. Motto kami: "Karena belajar bukan tentang siapa yang paling cepat, tapi siapa yang paling sadar. Maka, yuk: kita TEMUkan progres kita, ya." </p>
+                        <p class="text-gray-600 mb-4">Program berbasis sistem dashboard digital yang dirancang untuk membantu peserta didik, guru, dan orang tua menavigasi proses belajar secara personal dan reflektif. Motto kami: "Karena belajar bukan tentang siapa yang paling cepat, tapi siapa yang paling sadar. Maka, yuk: kita TEMUkan progres kita, ya."</p>
                         <h4 class="font-semibold text-gray-700 mb-2">Manfaat Program:</h4>
                         <ul class="text-sm text-gray-600 list-disc list-inside space-y-1">
-                            <li>Membantu peserta didik merencanakan perjalanan belajarnya secara personal. </li>
-                            <li>Memberikan akses yang jelas bagi guru dan orang tua untuk memantau perkembangan. </li>
-                            <li>Mendorong refleksi diri dan kebiasaan evaluasi mandiri. </li>
-                            <li>Mengubah evaluasi menjadi proses yang menyenangkan, visual, dan bermakna. </li>
+                            <li>Membantu peserta didik merencanakan perjalanan belajarnya secara personal.</li>
+                            <li>Mendorong refleksi diri dan kebiasaan evaluasi mandiri.</li>
+                            <li>Mengubah evaluasi menjadi proses yang menyenangkan, visual, dan bermakna.</li>
                         </ul>
+                         <div class="mt-6">
+                            <button class="register-button bg-green-600 text-white font-semibold py-2 px-5 rounded-lg hover:bg-green-700 transition duration-300" data-program-name="TEMU">
+                                <i class="fas fa-check-circle mr-2"></i>Daftar Program Ini
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </main>
     
-    <div id="loginModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden p-4">
-        <div class="bg-white p-8 rounded-xl shadow-2xl w-full max-w-sm transform transition-all duration-300 ease-out">
-            <div class="flex justify-between items-center mb-6">
-                <h2 class="text-2xl font-bold text-gray-800">Login</h2>
-                <button id="closeLoginModal" class="text-gray-400 hover:text-gray-800 text-3xl font-light">&times;</button>
+    <footer id="kontak" class="bg-gray-800 text-white py-12 mt-16"></footer>
+    
+    <div id="loginModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden"></div>
+    <div id="profileModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden"></div>
+    
+    <div id="login-required-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white p-8 rounded-2xl shadow-2xl w-full max-w-sm text-center">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">Akses Dibatasi</h2>
+            <p class="text-gray-600 mb-6">Anda harus masuk (login) terlebih dahulu untuk mendaftar program.</p>
+            <div class="flex justify-center gap-4">
+                <button onclick="closeLoginRequiredModalAndOpenLogin()" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md font-semibold">Login Sekarang</button>
+                <button onclick="closeLoginRequiredModal()" class="bg-gray-200 hover:bg-gray-300 text-gray-700 px-6 py-2 rounded-md font-semibold">Nanti Saja</button>
             </div>
-            <form id="loginForm">
-                <div class="mb-4">
-                    <label for="username" class="block text-sm font-medium text-gray-700 mb-1">Username</label>
-                    <input type="text" id="username" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="contoh: rasyid" required>
-                </div>
-                <div class="mb-4">
-                    <label for="password" class="block text-sm font-medium text-gray-700 mb-1">Password</label>
-                    <input type="password" id="password" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="password: password123" required>
-                </div>
-                <p id="loginError" class="text-red-500 text-sm mb-4 h-5"></p>
-                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300">
-                    Login
-                </button>
-            </form>
-        </div>
-    </div>
-    <div id="profileModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden p-4">
-         <div class="bg-white p-8 rounded-xl shadow-2xl w-full max-w-sm transform transition-all duration-300 ease-out text-center">
-            <div class="flex justify-between items-center mb-6">
-                <h2 class="text-2xl font-bold text-gray-800">Profil Pengguna</h2>
-                <button id="closeProfileModal" class="text-gray-400 hover:text-gray-800 text-3xl font-light">&times;</button>
-            </div>
-            <div id="profileDetails"></div>
-            <button id="logoutButton" class="w-full mt-6 bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300">
-                Logout
-            </button>
         </div>
     </div>
 
-    <footer id="kontak" class="bg-gray-800 text-white py-12 mt-16"></footer>
-    
+
     <script src="app.js"></script>
     <script>
+        function showLoginRequiredModal() {
+            document.getElementById('login-required-modal').classList.remove('hidden');
+        }
+
+        function closeLoginRequiredModal() {
+            document.getElementById('login-required-modal').classList.add('hidden');
+        }
+        
+        function closeLoginRequiredModalAndOpenLogin() {
+            closeLoginRequiredModal();
+            openLoginModal(); // This function is from app.js
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
             const accordionButtons = document.querySelectorAll('.accordion-button');
             accordionButtons.forEach(button => {
                 button.addEventListener('click', () => {
                     const isActive = button.classList.contains('active');
+                    
                     accordionButtons.forEach(btn => {
                         btn.classList.remove('active');
-                        btn.querySelector('.accordion-icon').innerHTML = '<i class="fas fa-plus"></i>';
                         btn.querySelector('.accordion-icon').classList.remove('rotate-45');
                     });
+                    
                     if (!isActive) {
                         button.classList.add('active');
-                        button.querySelector('.accordion-icon').innerHTML = '<i class="fas fa-minus"></i>';
+                        button.querySelector('.accordion-icon').classList.add('rotate-45');
+                    }
+                });
+            });
+
+            // Registration Logic
+            const registerButtons = document.querySelectorAll('.register-button');
+            
+            // Function to update button states based on session storage
+            function updateRegistrationStatus() {
+                registerButtons.forEach(button => {
+                    const programName = button.dataset.programName;
+                    const isRegistered = sessionStorage.getItem(`registered_${programName}`);
+                    if (isRegistered) {
+                        button.textContent = 'Anda Sudah Terdaftar';
+                        button.disabled = true;
+                        button.classList.remove('bg-green-600', 'hover:bg-green-700');
+                        button.classList.add('bg-gray-400', 'cursor-not-allowed');
+                    }
+                });
+            }
+
+            // Initial check when page loads
+            updateRegistrationStatus();
+
+            registerButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    if (loggedInUser) {
+                        const programName = button.dataset.programName;
+                        alert(`Selamat, ${loggedInUser.username}! Anda berhasil terdaftar untuk program "${programName}".`);
+                        
+                        // Save registration status to session storage
+                        sessionStorage.setItem(`registered_${programName}`, 'true');
+                        
+                        // Update button status
+                        updateRegistrationStatus();
+
+                    } else {
+                        // Show login required modal if not logged in
+                        showLoginRequiredModal();
                     }
                 });
             });
